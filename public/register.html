@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>WorkMap — Créer un compte</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <nav id="main-nav"></nav>
+  <h1>Créer un compte</h1>
+
+  <form id="registerForm">
+    <label>Prénom<br>
+      <input type="text" id="first_name" required maxlength="100">
+    </label><br><br>
+
+    <label>Nom<br>
+      <input type="text" id="last_name" required maxlength="100">
+    </label><br><br>
+
+    <label>Email<br>
+      <input type="email" id="email" required maxlength="255">
+    </label><br><br>
+
+    <label>Mot de passe (10 caractères minimum)<br>
+      <input type="password" id="password" required minlength="10">
+    </label><br><br>
+
+    <label>Confirmer le mot de passe<br>
+      <input type="password" id="password_confirm" required minlength="10">
+    </label><br><br>
+
+    <button type="submit">Créer mon compte</button>
+  </form>
+
+  <p id="message"></p>
+
+  <p><a href="/login.html">Retour à la connexion</a></p>
+
+  <<script src="/js/api.js"></script>
+<script src="/js/ui.js"></script>   <!-- 👈 à ajouter si absente -->
+<script src="/js/nav.js"></script>
+<script src="/js/register.js"></script>
+    <script>
+    initNav();
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>WorkMap — Signaler une contribution</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1>WorkMap</h1>
+    <nav id="main-nav"></nav>
+  </header>
+
+  <main>
+    <h2>Signaler une contribution</h2>
+    <p id="error" class="error hidden"></p>
+    <p id="success" class="success hidden"></p>
+
+    <form id="report-form">
+      <p id="target-info" class="hint"></p>
+
+      <label>Raison du signalement *
+        <select name="reason" required>
+          <option value="">— Choisir —</option>
+          <option value="false_information">Informations fausses</option>
+          <option value="duplicate">Doublon</option>
+          <option value="personal_data">Données personnelles exposées</option>
+          <option value="abusive_content">Contenu abusif</option>
+          <option value="impersonation">Usurpation d’identité</option>
+          <option value="nonexistent_organization">Organisation inexistante</option>
+          <option value="other">Autre</option>
+        </select>
+      </label>
+
+      <label>Détails<textarea name="comment" rows="4"></textarea></label>
+
+      <fieldset id="anonymous-fields">
+        <legend>Vos coordonnées (privées, jamais affichées)</legend>
+        <p class="hint">Requis si vous n’avez pas de compte.</p>
+        <label>Nom<input type="text" name="reporterName"></label>
+        <label>Contact (téléphone ou email)<input type="text" name="reporterContact"></label>
+      </fieldset>
+
+      <button type="submit">Envoyer le signalement</button>
+    </form>
+  </main>
+
+  <script src="/js/api.js"></script>
+<script src="/js/ui.js"></script>   <!-- 👈 à ajouter si absente -->
+<script src="/js/nav.js"></script>
+<script src="/js/report.js"></script> <!-- ou review.js, etc. -->
+  <script>
+    initNav();
+  </script>
+</body>
+</html>

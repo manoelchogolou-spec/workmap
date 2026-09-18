@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>WorkMap — Demander une correction</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1>WorkMap</h1>
+    <nav id="main-nav"></nav>
+  </header>
+
+  <main>
+    <h2>Demander une correction d’une organisation officielle</h2>
+    <p id="error" class="error hidden"></p>
+    <p id="success" class="success hidden"></p>
+
+    <form id="correction-form">
+      <p id="target-info" class="hint"></p>
+
+      <label>Champ concerné *
+        <select name="fieldName" required>
+          <option value="">— Choisir —</option>
+          <option value="name">Nom</option>
+          <option value="description">Description</option>
+          <option value="neighborhood">Quartier</option>
+          <option value="address">Adresse</option>
+          <option value="phone">Téléphone</option>
+          <option value="email">Email</option>
+          <option value="website">Site web</option>
+        </select>
+      </label>
+
+      <label>Valeur proposée *<input type="text" name="proposedValue" required></label>
+      <label>Motif<textarea name="reason" rows="3"></textarea></label>
+
+      <fieldset id="anonymous-fields">
+        <legend>Vos coordonnées (privées, jamais affichées)</legend>
+        <p class="hint">Requis si vous n’avez pas de compte.</p>
+        <label>Nom<input type="text" name="submitterName"></label>
+        <label>Contact (téléphone ou email)<input type="text" name="submitterContact"></label>
+      </fieldset>
+
+      <button type="submit">Envoyer la demande</button>
+    </form>
+  </main>
+
+  
+
+  <script src="/js/api.js"></script>
+<script src="js/ui.js"></script>   <!-- 👈 à ajouter si absente -->
+<script src="/js/nav.js"></script>
+<script src="/js/correction.js"></script>
+  <script>
+    initNav();
+  </script>
+</body>
+</html>

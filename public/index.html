@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WorkMap — Carte du travail</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="/index.html">WorkMap</a></h1>
+    <nav id="main-nav" aria-label="Navigation principale"></nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Rechercher</h2>
+      <form id="search-form">
+        <label>Recherche
+          <input type="text" id="search" placeholder="Nom, description, adresse...">
+        </label>
+
+        <label>Département
+          <select id="department"><option value="">Tous</option></select>
+        </label>
+
+        <label>Commune
+          <select id="commune"><option value="">Toutes</option></select>
+        </label>
+
+        <label>Type
+          <select id="type">
+            <option value="">Tous</option>
+            <option value="private_profit">Privée lucrative</option>
+            <option value="private_nonprofit">Privée non lucrative</option>
+            <option value="public">Publique</option>
+          </select>
+        </label>
+
+        <button type="submit" id="search-btn">Rechercher</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Résultats</h2>
+
+      <fieldset>
+        <legend>Afficher</legend>
+        <label><input type="checkbox" id="show-official" checked> Organisations officielles</label>
+        <label><input type="checkbox" id="show-contributions"> Contributions non vérifiées</label>
+      </fieldset>
+
+      <p id="reliability-hint" class="banner-warning hidden">
+        ⚠️ Les contributions affichées sont des informations non vérifiées,
+        sans garantie de WorkMap.
+      </p>
+
+      <div id="results-grid"></div>
+    </section>
+  </main>
+
+<script src="/js/api.js"></script>
+<script src="/js/ui.js"></script>   <!-- 👈 à ajouter si absente -->
+<script src="/js/nav.js"></script>
+<script src="/js/home.js"></script>
+  <script>
+    initNav();
+  </script>
+</body>
+</html>

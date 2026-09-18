@@ -1,0 +1,20 @@
+# Dépendances
+node_modules/
+
+# Environnement (JAMAIS de .env dans Git)
+.env
+
+# Base de données locale
+db/*.sqlite
+db/*.sqlite-shm
+db/*.sqlite-wal
+db/*.sqlite.dev
+
+# Fichiers privés / uploads locaux
+private/*
+!private/.gitkeep
+
+# Système
+Thumbs.db
+.DS_Store
+*.log

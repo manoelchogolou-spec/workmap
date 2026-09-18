@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WorkMap — Examen des contributions</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1>Examen des contributions</h1>
+    <nav id="main-nav"></nav>
+  </header>
+
+  <main>
+    <p id="access-message" class="message"></p>
+
+    <section id="queue-section" hidden>
+      <h2>File d’attente</h2>
+      <p class="hint">Contributions en attente, non masquées par la modération.</p>
+      <p id="queue-message" class="message"></p>
+      <table id="queue-table">
+        <thead>
+          <tr>
+            <th>Organisation</th><th>Type</th><th>Localisation</th>
+            <th>Prépubliée</th><th>Déposée le</th><th>Action</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section id="detail-section" hidden>
+      <h2>Examen de la contribution</h2>
+      <p><button id="btn-back">← Retour à la file</button></p>
+
+      <table id="detail-table"></table>
+
+      <h3>Décision</h3>
+      <fieldset>
+        <label>Commentaire interne (optionnel)
+          <textarea id="decision-comment" rows="2"></textarea>
+        </label>
+
+        <p>
+          <button id="btn-validate">✅ Valider et publier</button>
+          <button id="btn-reject">❌ Rejeter</button>
+          <button id="btn-duplicate">⚠️ Marquer comme doublon</button>
+        </p>
+
+        <div id="reject-box" hidden>
+          <label>Motif du rejet (obligatoire)
+            <input type="text" id="reject-reason">
+          </label>
+        </div>
+
+        <div id="duplicate-box" hidden>
+          <label>ID de l’organisation officielle existante (obligatoire)
+            <input type="text" id="duplicate-org-id">
+          </label>
+        </div>
+      </fieldset>
+
+      <h3>Enregistrer une vérification de champ</h3>
+      <fieldset>
+        <label>Champ
+          <select id="verif-field">
+            <option value="">— Choisir —</option>
+            <option value="name">Nom</option>
+            <option value="address">Adresse</option>
+            <option value="phone">Téléphone</option>
+            <option value="email">Email</option>
+            <option value="website">Site web</option>
+            <option value="description">Description</option>
+          </select>
+        </label>
+        <label>Méthode
+          <input type="text" id="verif-method" placeholder="Ex : appel téléphonique">
+        </label>
+        <label>Résultat
+          <select id="verif-status">
+            <option value="confirmed">Confirmé</option>
+            <option value="invalidated">Infirmé</option>
+          </select>
+        </label>
+        <p><button id="btn-verif">Enregistrer la vérification</button></p>
+      </fieldset>
+    </section>
+  </main>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/ui.js"></script>
+  <script src="/js/nav.js"></script>
+  <script src="/js/review.js"></script>
+  <script>initNav();</script>
+</body>
+</html>

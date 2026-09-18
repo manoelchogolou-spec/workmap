@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>WorkMap — Tableau de bord</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <nav id="main-nav"></nav>
+  <h1>Tableau de bord</h1>
+  <div id="content">Chargement...</div>
+  <p id="review-link" hidden>
+    <a href="/review.html" class="button">Examiner les contributions</a>
+  </p>
+  <button id="logoutBtn" style="display:none;">Se déconnecter</button>
+
+  <section id="my-contributions-section" hidden>
+  <h2>Mes contributions</h2>
+  <div id="my-contributions-message" class="message"></div>
+  <table id="my-contributions-table">
+    <thead>
+      <tr>
+        <th>Organisation</th><th>Type</th><th>Statut</th>
+        <th>Visible publiquement</th><th>Décision</th><th>Déposée le</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <p><a href="/contribute.html" class="button">Proposer une nouvelle contribution</a></p>
+</section>
+<nav id="role-links"></nav>
+
+  <script src="/js/api.js"></script>
+<script src="/js/ui.js"></script>   <!-- 👈 à ajouter si absente -->
+<script src="/js/nav.js"></script>
+  <script src="/js/dashboard.js"></script>
+  <script>
+    initNav();
+  </script>
+</body>
+</html>

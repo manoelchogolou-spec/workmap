@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WorkMap — Gestion des utilisateurs</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="/index.html">WorkMap</a> — Utilisateurs</h1>
+    <nav id="main-nav" aria-label="Navigation principale"></nav>
+  </header>
+
+  <main>
+    <p id="message" class="message"></p>
+    <div class="table-scroll">
+      <table id="users-table">
+        <thead>
+          <tr>
+            <th>Nom</th><th>Email</th><th>Téléphone</th>
+            <th>Statut</th><th>Rôles</th><th>Créé le</th><th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p id="users-empty" class="message"></p>
+
+    <dialog id="role-dialog">
+      <form method="dialog" id="role-form">
+        <h3 id="role-dialog-title">Attribuer un rôle</h3>
+        <label>Rôle
+          <select id="role-select" required></select>
+        </label>
+        <div class="card-actions">
+          <button type="button" id="role-cancel" class="button">Annuler</button>
+          <button type="submit" id="role-confirm" class="button">Attribuer</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="temp-password-dialog">
+      <h3>Mot de passe temporaire</h3>
+      <p>Communiquez-le à l'utilisateur par un canal sûr. Il ne sera plus affiché.</p>
+      <p><code id="temp-password-value"></code></p>
+      <p>L'utilisateur devra le changer à sa prochaine connexion.</p>
+      <button type="button" class="button" id="temp-password-close">Fermer</button>
+    </dialog>
+  </main>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/ui.js"></script>
+  <script src="/js/nav.js"></script>
+  <script src="/js/users.js"></script>
+  <script>initNav();</script>
+</body>
+</html>

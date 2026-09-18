@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>WorkMap — Gestion des utilisateurs</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="/dashboard.html">WorkMap</a> — Utilisateurs</h1>
+    <button id="logoutBtn" style="display:none">Déconnexion</button>
+  </header>
+
+  <main>
+    <p id="message" class="message"></p>
+
+    <table id="users-table">
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Email</th>
+          <th>Téléphone</th>
+          <th>Statut</th>
+          <th>Rôles</th>
+          <th>Créé le</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <dialog id="role-dialog">
+      <form method="dialog" id="role-form">
+        <h3 id="role-dialog-title">Attribuer un rôle</h3>
+        <select id="role-select" required></select>
+        <div>
+          <button type="button" id="role-cancel">Annuler</button>
+          <button type="submit" id="role-confirm">Attribuer</button>
+        </div>
+      </form>
+    </dialog>
+  </main>
+
+  <script src="/js/users.js"></script>
+</body>
+</html>

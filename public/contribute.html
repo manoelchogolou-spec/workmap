@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>WorkMap — Proposer une organisation</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1>WorkMap</h1>
+    <nav id="main-nav"></nav>
+  </header>
+
+  <main>
+    <h2>Proposer une organisation</h2>
+    <p id="error" class="error hidden"></p>
+    <p id="success" class="success hidden"></p>
+
+    <form id="contribute-form">
+
+      <fieldset>
+        <legend>Votre identité (privée, jamais affichée publiquement)</legend>
+        <div id="connected-info" class="hidden">
+          <p>Vous êtes connecté : votre compte sera associé à la contribution. Aucune donnée personnelle ne sera affichée.</p>
+        </div>
+        <div id="anonymous-fields">
+          <p class="hint">Sans compte, ces informations sont requises pour un suivi privé.</p>
+          <label>Prénom *<input type="text" name="contributorFirstName" required></label>
+          <label>Nom *<input type="text" name="contributorLastName" required></label>
+          <label>Téléphone *<input type="text" name="contributorPhone" required></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Informations sur l’organisation</legend>
+        <label>Nom de l’organisation *<input type="text" name="organizationName" required></label>
+
+        <label>Type présumé *
+          <select name="organizationType" required>
+            <option value="">— Choisir —</option>
+            <option value="private_profit">Privée lucrative</option>
+            <option value="private_nonprofit">Privée non lucrative</option>
+            <option value="public">Publique</option>
+          </select>
+        </label>
+
+        <label>Département
+          <select name="departmentId" id="department"><option value="">—</option></select>
+        </label>
+        <label>Commune
+          <select name="communeId" id="commune"><option value="">—</option></select>
+        </label>
+        <label>Quartier<input type="text" name="neighborhood"></label>
+        <label>Adresse<input type="text" name="address"></label>
+        <label>Secteur d’activité
+          <select name="activitySectorId" id="sector"><option value="">—</option></select>
+        </label>
+        <label>Téléphone de l’organisation<input type="text" name="phone"></label>
+        <label>Email de l’organisation<input type="email" name="email"></label>
+        <label>Site web<input type="text" name="website"></label>
+        <label>Description<textarea name="description" rows="4"></textarea></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Visibilité</legend>
+        <label>
+          <input type="checkbox" name="publicVisibility" checked>
+          Autoriser la prépublication de cette fiche avant vérification
+        </label>
+      </fieldset>
+
+      <fieldset class="consent-box">
+        <legend>Information et consentement</legend>
+        <ul>
+          <li>Certaines informations sur l’organisation <strong>pourront être publiées avant vérification</strong>.</li>
+          <li>Ne transmettez pas de données personnelles, confidentielles ou sensibles non nécessaires.</li>
+          <li>Votre identité personnelle ne sera <strong>jamais affichée</strong> publiquement.</li>
+          <li>WorkMap peut masquer la contribution à tout moment.</li>
+        </ul>
+        <label>
+          <input type="checkbox" name="consent" required>
+          J’ai compris et j’accepte que ces informations soient traitées selon les conditions ci-dessus. *
+        </label>
+      </fieldset>
+
+      <button type="submit">Envoyer la contribution</button>
+    </form>
+  </main>
+
+<script src="/js/api.js"></script>
+<script src="js/ui.js"></script>   <!-- 👈 à ajouter si absente -->
+<script src="/js/nav.js"></script>
+<script src="/js/contribute.js"></script>
+  <script>
+    initNav();
+  </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "workmap",
+  "version": "1.0.0",
+  "description": "Base structurée des organisations du Bénin — MVP",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "init-db": "node scripts/init-db.js",
+    "init-db-prod": "node scripts/init-db-prod.js",
+    "bootstrap-admin": "node scripts/bootstrap-admin.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "better-sqlite3": "^13.0.3",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  }
+}
